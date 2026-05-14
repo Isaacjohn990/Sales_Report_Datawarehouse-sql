@@ -142,6 +142,7 @@ DROP TABLE IF EXISTS Gold.Unified_orders_facts;
 GO
 
 --- Create Unified facts table by merging Orders and OrdersArchive, ensuring no duplicates based on OrderID
+CREATE VIEW Gold.Unified_orders_facts AS --- Create Views
 SELECT 
 	OrderID,
 	ProductID,
@@ -197,6 +198,7 @@ DROP TABLE IF EXISTS Gold.Fact_orders;
 GO
 
 -- Now create the Fact table
+CREATE VIEW Gold.Fact_orders AS --- Create View
 WITH Deduplicated_orders AS (
 	SELECT *,
 			ROW_NUMBER() OVER (PARTITION BY OrderID
