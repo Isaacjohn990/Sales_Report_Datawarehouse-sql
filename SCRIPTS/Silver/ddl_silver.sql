@@ -13,7 +13,9 @@ Script Purpose:
 */
 
 
+--=========================================================
 -- Silver table for customers
+--=========================================================
 IF OBJECT_ID ('silver_layer.customers', 'U') IS NOT NULL 	
 DROP TABLE silver_layer.customers;
 
@@ -25,8 +27,10 @@ CREATE TABLE silver_layer.customers (
 	Score INT
 	);
 GO
-
+	
+--======================================================
 -- Silver Table for Employees
+--=====================================================
 IF OBJECT_ID ('silver_layer.Employees', 'U') IS NOT NULL 	
 DROP TABLE silver_layer.Employees;
 
@@ -41,9 +45,10 @@ CREATE TABLE silver_layer.Employees (
 	ManagerID INT
 	);
 GO
-
-
+	
+--==============================================
 -- Silver Table for Orders
+--==============================================
 IF OBJECT_ID ('silver_layer.', 'U') IS NOT NULL 	
 DROP TABLE silver_layer.Orders;
 
@@ -62,8 +67,10 @@ CREATE TABLE silver_layer.Orders (
 	CreationTime DATETIME
 	);
 GO
-
+	
+--==========================================================
 -- Silver Table for OrdersArchive
+--==========================================================
 IF OBJECT_ID ('silver_layer.OrdersArchive', 'U') IS NOT NULL 	
 DROP TABLE silver_layer.customers;
 
@@ -82,8 +89,9 @@ CREATE TABLE silver_layer.OrdersArchive (
 	CreationTime DATETIME
 );
 GO
-
+--=====================================================
 -- silver Table for Products
+--=====================================================
 IF OBJECT_ID ('silver_layer.Products', 'U') IS NOT NULL 	
 DROP TABLE silver_layer.Products;
 
