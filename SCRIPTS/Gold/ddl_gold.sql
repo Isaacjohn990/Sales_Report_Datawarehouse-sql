@@ -218,7 +218,7 @@ SELECT
 		o.BillAddress,
 		o.Quantity,
 		o.Sales
-INTO Gold.Fact_orders
+
 FROM Deduplicated_orders o
 LEFT JOIN Gold.customers2_dim c ON o.CustomerID = c.CustomerID
 LEFT JOIN Gold.products2_dim p ON o.ProductID = p.ProductID
