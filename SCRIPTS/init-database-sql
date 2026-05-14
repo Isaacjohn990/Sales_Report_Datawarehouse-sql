@@ -1,1 +1,33 @@
+/*
+====================================================================
+creating a Database and Schema
+====================================================================
 
+Script Purpose:
+  This script creates a new database named "Sales_Report_DatawareHouse" after checking if it already exists.
+  The script sets up three schemas within the database: 'bronze', 'silver', 'gold'.
+
+WARNING: 
+  Running this scripts will drop the entire "Sales_Report_DatawareHouse" databaseif it exits.
+  All data in the database will be permanently deleted. Proceedwith Caution 
+  and ensure you have proper backups before running this script.
+
+  */
+  
+
+CREATE DATABASE Sales_Report_DataWareHouse;
+GO
+
+USE Sales_Report_DataWareHouse;
+GO 
+
+
+--- Create Schema
+CREATE SCHEMA bronze_layer;
+GO
+
+CREATE SCHEMA silver_layer;
+GO
+
+CREATE SCHEMA gold_layer;
+GO
