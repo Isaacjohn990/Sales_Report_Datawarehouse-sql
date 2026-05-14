@@ -37,6 +37,9 @@ GO
 CREATE OR ALTER PROCEDURE silver_layer.load_silver AS 
 BEGIN
 
+--===================================================
+-- Cleaning & Standardizing customer table
+--===================================================	
 TRUNCATE TABLE silver_layer.customers; 
 
 INSERT INTO silver_layer.customers (
@@ -62,9 +65,9 @@ FROM  bronze_layer.customers;
 
 SELECT * FROM silver_layer.customers
 
-
--- For Employees Table
-
+--===================================================
+-- Cleaning & Standardizing  Employees Table
+--===================================================
 TRUNCATE TABLE silver_layer.Employees;
 
 INSERT INTO silver_layer.Employees (
@@ -98,10 +101,9 @@ CASE
 END AS ManagerID
 FROM bronze_layer.Employees
 
-
-
---- For Orders Table
-
+--===================================================	
+--- Cleaning & Standardizing Employees Table
+--===================================================
 TRUNCATE TABLE silver_layer.Orders;
 
 INSERT INTO silver_layer.Orders ( 
@@ -135,10 +137,10 @@ END AS Updated_BillAddress,
 Quantity,
 Sales
 FROM bronze_layer.Orders
-
-
-
---- For OrdersArchive Table
+	
+--===================================================
+-- Cleaning & Standardizing OrdersArchive Table
+--===================================================
 TRUNCATE TABLE silver_layer.OrderArchive;
 
 INSERT INTO silver_layer.OrdersArchive(
@@ -171,9 +173,9 @@ Quantity,
 Sales
 FROM bronze_layer.OrdersArchive
 
-
-
---- For Products Table
+--===========================================
+--- Cleaning & Standardizing Products Table
+--===========================================
 TRUNCATE TABLE silver_layer.Products;
 
 INSERT INTO silver_layer.Products(
